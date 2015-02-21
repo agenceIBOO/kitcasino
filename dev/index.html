@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Vous</title>
-
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+<link rel="stylesheet" href="style.css">
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true&amp;libraries=places"></script>
     <script>
 // This example displays an address form, using the autocomplete feature
 // of the Google Places API to help users fill in the information.
@@ -55,26 +55,28 @@ function fillInAddress() {
 // [END region_fillform]
 
     </script>
-
-    <style>
-    </style>
   </head>
 
   <body onload="initialize()">
 
-  <form method="post" action="votre_soiree.php">
-      <p>
-          <label>Nom</label> : <input type="text" name="nom" autofocus><br>
-          <label>Prénom</label> : <input type="text" name="prenom"><br>
-          <label>Adresse</label> : <span id="locationField">
-      <input id="autocomplete" name="adresse"
-             onFocus="geolocate()" type="text" size="50" placeholder=""></input>
-    </span><br>
-          <label>Numéro de téléphone</label> : <input type="tel" name="tel"><br>
-          <label>Adresse e-mail</label> : <input type="email" name="mail"><br>
-          <input type="submit" name="submit" value="Poursuivre">
-      </p>
+  <form method="post" action="votre_soiree.php" id="msform">
+  <!-- progressbar -->
+  <ol class="progtrckr" data-progtrckr-steps="5">
+    <li class="progtrckr-todo">Vous</li><li class="progtrckr-todo">Votre soirée</li><li class="progtrckr-todo">Vos jeux</li><li class="progtrckr-todo">Récapitulatif</li><li class="progtrckr-todo">Confirmation</li>
+  </ol>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">A propos de vous</h2>
+    <h3 class="fs-subtitle">Pour garder le contact plus aisément, merci de remplir les champs suivants</h3>
+      <input type="text" name="nom" id="nom" autofocus placeholder="Nom"><br>
+      <input type="text" name="prenom" id="prenom" placeholder="Prénom"><br>
+      <span id="locationField"><input id="autocomplete" name="adresse" onFocus="geolocate()" type="text" size="50" placeholder="Adresse"></input></span><br>
+      <input type="tel" name="tel" id="tel" placeholder="Téléphone"><br>
+      <input type="email" name="mail" id="mail" placeholder="E-mail"><br>
+      <input type="submit" name="submit" class="next action-button" value="Poursuivre">
+  </fieldset>
   </form>
 
+<!-- Mascotte: Ces informations nous serviront par la suite afin de vous contacter pour finaliser le devis. -->
 </body>
 </html>

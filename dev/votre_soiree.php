@@ -3,6 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Votre soirée</title>
+<link rel="stylesheet" href="style.css">
+<style>
+#progressbar li.active::before, #progressbar li.active::after{
+background: #27AE60 !important;
+color: white !important;
+}
+</style>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
     <script>
 // This example displays an address form, using the autocomplete feature
@@ -59,25 +66,42 @@ function fillInAddress() {
 </head>
 <body onload="initialize()">
 
-  <form method="post" action="vos_jeux.php">
-      <p>
-<label>Adresse de l'évènement</label> : <span id="locationField">
-      <input id="autocomplete" name="adresse2"
-             onFocus="geolocate()" type="text" size="50" placeholder="" autofocus></input>
-    </span><br>
-<label>Date de la soirée</label> : <input type="date" name="date"><br>
-<label>Nombre d'invités</label> : <input type="tel" name="nb_invite"><br>
-<label>Type d'évènement</label> : <input type="text" name="evenement"><br>
-
-<input type="hidden" name="nom" value="<?php echo $_POST['nom']; ?>">
+  <form method="post" action="vos_jeux.php" id="msform">
+  <!-- progressbar -->
+   <ol class="progtrckr" data-progtrckr-steps="5">
+    <li class="progtrckr-done">Vous</li><li class="progtrckr-todo">Votre soirée</li><li class="progtrckr-todo">Vos jeux</li><li class="progtrckr-todo">Récapitulatif</li><li class="progtrckr-todo">Confirmation</li>
+  </ol>
+  <!-- fieldsets -->
+<fieldset>
+    <h2 class="fs-title">Votre soirée</h2>
+    <h3 class="fs-subtitle">Dites-nous en plus sur la soirée que vous voulez organiser</h3>
+    <span id="locationField"><input id="autocomplete" name="adresse2" onFocus="geolocate()" type="text" size="50" placeholder="Adresse de l'évènement" autofocus></input></span><br>
+    <input type="date" name="date" placeholder="Date de la soirée"><br>
+    <input type="number" name="nb_invite" placeholder="Nombre d'invités"><br>
+  <div class="txtleft">
+<label for="evnment">Type de soirée :</label>
+<input list="evenement" type="text" id="evnment">
+<datalist id="evenement">
+<option value="Anniversaire">
+      <option value="Mariage">
+      <option value="Séminaires">
+      <option value="Rallyes">
+      <option value="Jupiter">
+      <option value="Fêtes (Noël etc...)">
+      <option value="Autres">
+</datalist>
+  </div>
+    <input type="hidden" name="nom" value="<?php echo $_POST['nom']; ?>">
 <input type="hidden" name="prenom" value="<?php echo $_POST['prenom']; ?>">
 <input type="hidden" name="adresse" value="<?php echo $_POST['adresse']; ?>">
 <input type="hidden" name="tel" value="<?php echo $_POST['tel']; ?>">
 <input type="hidden" name="mail" value="<?php echo $_POST['mail']; ?>">
 
-<input type="button" value="Retour en arrière" onClick="self.history.back();">
-<input type="submit" name="submit" value="Poursuivre">
-      </p>
+<input type="button" value="Retour en arrière" class="red" onClick="self.history.back();">
+<input type="submit" name="submit" class="action-button" value="Poursuivre">
+  </fieldset>
 </form>
+
+<!-- Mascotte: Afin de vous guider au mieux dans l'organisation de votre soirée, merci de nous donner plus d'infos sur celle-ci! (frais de livraison?) -->
 </body>
 </html>

@@ -3,40 +3,42 @@
 <head>
   <meta charset="utf-8">
   <title>Vos jeux</title>
+    <link rel="stylesheet" href="style.css">
 <style>
 input[type=checkbox]{
   display: none;
-}
-img{
-  cursor: pointer;
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
 
-<form method="post" action="recap.php">
-  <p>
-    Cliquez sur les icônes des jeux que vous souhaitez:<br>
-      
+<form method="post" action="recap.php" id="msform">
+<!-- progressbar -->
+   <ol class="progtrckr" data-progtrckr-steps="5">
+    <li class="progtrckr-done">Vous</li><li class="progtrckr-done">Votre soirée</li><li class="progtrckr-todo">Vos jeux</li><li class="progtrckr-todo">Récapitulatif</li><li class="progtrckr-todo">Confirmation</li>
+  </ol>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">Vos jeux</h2>
+    <h3 class="fs-subtitle">Cliquez sur les icônes des jeux que vous désirez louer</h3>
+    
       <label for="blackjack"><img src="img/blackjack.jpg" alt="" data-checked='img/blackjack.gif' data-unchecked='img/blackjack.jpg'></label>
       <INPUT id="blackjack" type="checkbox" value="Blackjack" name="game[]">    
-
+    
       <label for="chuckaluck"><img src="img/chuckaluck.jpg" alt="" data-checked='img/chuckaluck.gif' data-unchecked='img/chuckaluck.jpg'></label>
       <INPUT id="chuckaluck" type="checkbox" value="Chuck a Luck" name="game[]">
-
+     
       <label for="roulette"><img src="img/roulette.jpg" alt="" data-checked='img/roulette.gif' data-unchecked='img/roulette.jpg'></label>
       <INPUT id="roulette" type="checkbox" value="Roulette" name="game[]">
 
       <label for="stud"><img src="img/stud.jpg" alt="" data-checked='img/stud.gif' data-unchecked='img/stud.jpg'></label>
       <INPUT id="stud" type="checkbox" value="Stud Poker" name="game[]">
-
       <label for="holdem"><img src="img/holdem.jpg" alt="" data-checked='img/holdem.gif' data-unchecked='img/holdem.jpg'></label>
       <INPUT id="holdem" type="checkbox" value="Holdem Poker" name="game[]">
 
-      <label for="boule"><img src="img/boule.jpg" alt="" data-checked='img/boule.gif' data-unchecked='img/boule.jpg'></label></p> 
+      <label for="boule"><img src="img/boule.jpg" alt="" data-checked='img/boule.gif' data-unchecked='img/boule.jpg'></label>
       <INPUT id="boule" type="checkbox" value="La Boule" name="game[]">
- 
 
 <input type="hidden" name="nom" value="<?php echo $_POST['nom']; ?>">
 <input type="hidden" name="prenom" value="<?php echo $_POST['prenom']; ?>">
@@ -47,9 +49,10 @@ img{
 <input type="hidden" name="date" value="<?php echo $_POST['date']; ?>">
 <input type="hidden" name="nb_invite" value="<?php echo $_POST['nb_invite']; ?>">
 <input type="hidden" name="evenement" value="<?php echo $_POST['evenement']; ?>">
-    <input type="button" value="Retour en arrière" onClick="self.history.back();">
-    <input type="submit" name="submit" value="Poursuivre">
-</p>
+
+<input type="button" value="Retour en arrière" class="red" onClick="self.history.back();">
+<input type="submit" name="submit" class="action-button" value="Poursuivre">
+  </fieldset>
 </form>
 
 <script>
@@ -82,6 +85,6 @@ $distance = round($distance);
 // Message-mascotte en forme d'indication permettant à l'utilisateur de prédire ses frais de livraisons
 ?>
 
-
+<!-- Mascotte: Vous avez indiqué avoir $nb_invite. Nous vous conseillons donc de prendre $tant de kits. -->
 </body>
 </html>

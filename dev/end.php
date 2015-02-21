@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Confirmation</title>
+  <link rel="stylesheet" href="style.css">
 <style>
 </style>
 </head>
@@ -34,10 +35,17 @@ if (mysqli_query($conn, $sql)) {
 
 mysqli_close($conn);
 ?>
-
-<h1>Merci!</h1>
-<h3>Votre devis vient d'être transmis aux organisateurs des soirées casinos, ils vous contacteront dans les plus brefs délais.<br>
-  Si c'est urgent, n'hésitez pas à faire le premier pas! : 06xxxxxxxx.</h3>
+<form method="post" action="" id="msform">
+  <!-- progressbar -->
+  <ol class="progtrckr" data-progtrckr-steps="5">
+    <li class="progtrckr-done">Vous</li><li class="progtrckr-done">Votre soirée</li><li class="progtrckr-done">Vos jeux</li><li class="progtrckr-done">Récapitulatif</li><li class="progtrckr-done">Confirmation</li>
+  </ol>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">Confirmation</h2>
+    <h3 class="fs-subtitle">Votre devis est arrivé à bon port, à nous de jouer maintenant! Nous vous contacterons dans les plus brefs délais. Toutefois si cela est urgent, n'hésitez pas à faire le premier pas! : 06xxxxxxxx</h3>
+  </fieldset>
+  </form>
 
 </body>
 </html>

@@ -35,8 +35,8 @@ p{
     Date de la soirée: <?php echo $_POST['date']; ?><br>
     Nombre d'invités: <?php echo $_POST['nb_invite']; ?><br>
     Type d'évènement: <?php echo $_POST['evenement']; ?><br>
-    Jeux séléctionnés: <?php if(empty($_POST['game'])){
-    echo "Aucun jeux n'a été séléctionné :("; } else { $N = count($_POST['game']); echo($N." jeux choisis : "); for($i=0; $i < $N; $i++){ echo($_POST['game'][$i] . " "); }
+    Jeu(x) sélectionné(s): <?php if(empty($_POST['game'])){
+    echo "Aucun jeux n'a été séléctionné :("; } else { $N = count($_POST['game']); echo($N." jeux choisis : "); for($i=0; $i < $N; $i++){ echo($_POST['game'][$i] . ", "); }
 }
 ?>
 <hr>

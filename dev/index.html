@@ -70,7 +70,7 @@ function fillInAddress() {
     <h3 class="fs-subtitle">Pour garder le contact plus aisément, merci de remplir les champs suivants</h3>
       <input type="text" name="nom" id="nom" autofocus placeholder="Nom"><br>
       <input type="text" name="prenom" id="prenom" placeholder="Prénom"><br>
-      <span id="locationField"><input id="autocomplete" name="adresse" onFocus="geolocate()" type="text" size="50" placeholder="Adresse"></input></span><br>
+      <span id="locationField"><input id="autocomplete" name="adresse" onFocus="geolocate()" type="text" autocomplete="off" size="50" placeholder="Adresse"></input></span><br>
       <input type="tel" name="tel" id="tel" placeholder="Téléphone"><br>
       <input type="email" name="mail" id="mail" placeholder="E-mail"><br>
       <input type="submit" name="submit" class="next action-button" value="Poursuivre">

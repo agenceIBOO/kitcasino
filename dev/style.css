@@ -3,9 +3,11 @@
 
 /*basic reset*/
 * {margin: 0; padding: 0;}
+
 img{
   cursor: pointer;
 }
+
 html {
 	height: 100%;
 	/*Image only BG fallback*/
@@ -15,6 +17,17 @@ html {
 
 body {
 	font-family: montserrat, arial, verdana;
+}
+
+#selected{
+    width: 350px;
+    height: 200px;
+    background-color: #339933;
+    border-width: 1px;
+    border-style: dotted;
+    border-color: black;
+    padding: 10px;
+    margin: 10px auto;
 }
 
 /*form styles*/
@@ -155,4 +168,29 @@ ol.progtrckr li.progtrckr-todo:before {
     background-color: white;
     font-size: 1.5em;
     bottom: -1.6em;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {  /*safari and chrome*/
+    select {
+        height:30px;
+        width: 100%;
+        line-height:30px;
+        background:#f4f4f4;
+    } 
+}
+select::-moz-focus-inner { /*Remove button padding in FF*/ 
+    border: 0;
+    padding: 0;
+}
+@-moz-document url-prefix() { /* targets Firefox only */
+    select {
+        padding: 15px 0!important;
+    }
+}        
+@media screen\0 { /* IE Hacks: targets IE 8, 9 and 10 */        
+    select {
+        height:30px;
+        width: 100%;
+        line-height:30px;
+    }     
 }

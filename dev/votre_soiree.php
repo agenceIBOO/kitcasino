@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>Votre soirée</title>
-<link rel="stylesheet" href="style.css">
+<link href="jquery-ui-1.10.1.css" rel="stylesheet">
+<link rel="stylesheet" href="datepicker.css">
+<link href="style.css" rel="stylesheet">
 <style>
 #progressbar li.active::before, #progressbar li.active::after{
 background: #27AE60 !important;
@@ -11,6 +13,27 @@ color: white !important;
 }
 </style>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+  <script>
+    $(function() {
+      $( "#date-picker-input-1" ).datepicker({
+        altField: "#datepicker",
+        closeText: 'Fermer',
+        prevText: 'Précédent',
+        nextText: 'Suivant',
+        currentText: 'Aujourd\'hui',
+        monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+        dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+        dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+        dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+        weekHeader: 'Sem.',
+        dateFormat: 'dd/mm/yy'
+      })
+      .datepicker('widget').wrap('<div class="ll-skin-melon"/>');
+    });
+  </script>
     <script>
 // This example displays an address form, using the autocomplete feature
 // of the Google Places API to help users fill in the information.
@@ -76,20 +99,19 @@ function fillInAddress() {
     <h2 class="fs-title">Votre soirée</h2>
     <h3 class="fs-subtitle">Dites-nous en plus sur la soirée que vous voulez organiser</h3>
     <span id="locationField"><input id="autocomplete" name="adresse2" onFocus="geolocate()" type="text" size="50" placeholder="Adresse de l'évènement" autofocus></input></span><br>
-    <input type="date" name="date" placeholder="Date de la soirée"><br>
+    <input type="text" name="date" placeholder="Date de la soirée" id="date-picker-input-1"><br>
     <input type="number" name="nb_invite" placeholder="Nombre d'invités"><br>
   <div class="txtleft">
-<label for="evnment">Type de soirée :</label>
-<input list="evenement" type="text" id="evnment">
-<datalist id="evenement">
-<option value="Anniversaire">
-      <option value="Mariage">
-      <option value="Séminaires">
-      <option value="Rallyes">
-      <option value="Jupiter">
-      <option value="Fêtes (Noël etc...)">
-      <option value="Autres">
-</datalist>
+       <select name="evenement" id="evenement">
+            <option value="" disabled selected>Type d'évènement :</option>
+             <option value="Anniversaire">Anniversaire</option>
+             <option value="Rallyes">Rallyes</option>
+             <option value="Séminaire">Séminaire</option>
+             <option value="Fêtes">Fêtes</option>
+             <option value="Mariage">Mariage</option>
+             <option value="Autres">Autres</option>
+       </select>
+
   </div>
     <input type="hidden" name="nom" value="<?php echo $_POST['nom']; ?>">
 <input type="hidden" name="prenom" value="<?php echo $_POST['prenom']; ?>">
@@ -101,6 +123,8 @@ function fillInAddress() {
 <input type="submit" name="submit" class="action-button" value="Poursuivre">
   </fieldset>
 </form>
+
+
 
 <!-- Mascotte: Afin de vous guider au mieux dans l'organisation de votre soirée, merci de nous donner plus d'infos sur celle-ci! (frais de livraison?) -->
 </body>

@@ -30,7 +30,7 @@ get_header();
 
 				<input type="submit" value="Envoyer"></input>
 			</form>-->
-			<?php echo do_shortcode( '[contact-form-7 id="79" title="Formulaire de contact 1"]' ); ?>
+			<?php echo do_shortcode( '[contact-form-7 id="79" title="Contact"]' ); ?>
 		</div>
 
 

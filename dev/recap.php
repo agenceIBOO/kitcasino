@@ -1,19 +1,13 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>Récapitulatif</title>
-  <link rel="stylesheet" href="style.css">
-<style>
-.prix{
-  border: 2px red dotted;
-}
-p{
-  margin: 10px 0;
-}
-</style>
-</head>
-<body>
+<?php 
+
+/**
+* Template Name: Recapitulatif
+*/
+
+get_header(); 
+
+?>
+
 
 <form method="post" action="end.php" id="msform">
   <!-- progressbar -->
@@ -58,7 +52,7 @@ p{
       $caution = 1375 + ($N-2)*300;
       $total = $prix + $caution;
 
-      echo "Vous avez opté pour plusieurs kits contenant ".$N." jeux.<br> TOTAL: ".$prix." € + ".$caution." € de caution, soit ".$total." € au total."." La caution vous sera remise après rendu du matériel.";
+      echo "Vous avez opté pour un kit avec jeu(x) supplémentaire(s) contenant ".$N." jeux.<br> TOTAL: ".$prix." € + ".$caution." € de caution, soit ".$total." € au total."." La caution vous sera remise après rendu du matériel.";
     }
   ?>
   </p>
@@ -77,5 +71,4 @@ p{
   </fieldset>
   </form>
 
-</body>
-</html>
+<!--<?php get_footer(); ?>-->

@@ -89,7 +89,7 @@ h1, h2, h3 {
 	font-family: 'cards';
 }
 
-#avantages h2, #association h2{
+#avantages h2, #association h2, .tarifs h2{
 	font-size: 1.66666667em;
 	padding:20px;
 	padding-bottom:0px;
@@ -102,7 +102,7 @@ h1, h2, h3 {
 }
 
 
-#partenaires h2 {
+#partenaires h2, .tarifs h2:nth-of-type(2) {
 	font-size: 1.66666667em;
 	padding:20px;
 	padding-bottom:0px;
@@ -116,7 +116,7 @@ h1, h2, h3 {
 /* NOS JEUX */
 
 #nav-jeux {
-	margin:25px 0px;
+	margin:35px 0px;
 	height: 210px;
 
 }
@@ -210,6 +210,349 @@ h1, h2, h3 {
 #studpoker {
 	display:none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TARIFS ET DEVIS */
+
+.tarifs {
+	margin-top:35px;
+}
+
+.tarifs p {
+	text-align: center;
+}
+
+.tarifs p:nth-of-type(1) {
+	font-size: 1.5em;
+}
+
+.tarifs p:nth-of-type(2) {
+	font-size: 2em;
+	color:#a72525;
+	margin-bottom: 0;
+}
+
+.tarifs p:nth-of-type(3) {
+	color:#a72525;
+	margin: 0;
+}
+
+.tarifs h2:nth-of-type(2) {
+ 	margin: 50px 0px;
+ }
+
+.devis {
+	background-color:#a72525; 
+}
+
+
+
+
+
+										#selected{
+										    width: 297px;
+										    height: 225px;
+										    background-image: url(img/malle2.png);
+										    background-repeat: no-repeat;
+										    padding: 45px 33px;
+										    margin: 10px auto;
+										}
+
+										/*form styles*/
+										#msform {
+											
+											margin: 50px auto;
+											text-align: center;
+											position: relative;
+										}
+
+										.txtleft{
+											
+										}
+
+										#msform fieldset {
+											border: none;
+											padding: 20px 30px;
+											
+											/*stacking fieldsets above each other*/
+											/*position: absolute;*/
+										}
+										/*Hide all except first fieldset*/
+										#msform fieldset:not(:first-of-type) {
+											display: none;
+										}
+
+										/*inputs*/
+										#msform input, #msform textarea, #msform select {
+											padding: 15px;
+											border: 1px solid #ccc;
+											border-radius: 3px;
+											margin-bottom: 10px;
+											width: 50%;
+											box-sizing: border-box;
+											color: #2C3E50;
+										}
+
+										#msform select:focus {
+											outline: none;
+										}
+
+										#msform fieldset input[type=checkbox] {
+											display: none;
+										}
+
+										#msform .votrekit {
+											text-align: left;
+										}
+
+										/*buttons*/
+										#msform .action-button {
+											width:30%;
+											background-color: #27AE60;
+											font-weight: bold;
+											color: white;
+											border: 0 none;
+											border-radius: 1px;
+											cursor: pointer;
+											padding: 10px 5px;
+											margin: 10px 5px;
+										}
+										#msform .action-button:hover, #msform .action-button:focus {
+											background-color: #0d7f3d;
+										}
+										/* RED BUTTON */
+										#msform input.red {
+											width:30%;
+											background: #FF4B42;
+											font-weight: bold;
+											color: white !important;
+											border: 0 none;
+											border-radius: 1px;
+											cursor: pointer;
+											padding: 10px 5px;
+											margin: 10px 5px;
+											padding: 10px 5px !important;
+											border: none !important;
+											border-radius: 1px !important;
+										}
+										.red:hover, .red:focus {
+											background-color: #d82c24;
+										}
+
+										/*headings*/
+										.fs-title {
+											font-size: 15px;
+
+											text-transform: uppercase;
+											color: #2C3E50;
+											margin-bottom: 10px;
+										}
+										.fs-subtitle {
+											font-family: 'robotoregular';
+											color: #fff;
+											margin-bottom: 20px;
+											text-align: center;
+										}
+
+										/*progressbar*/
+										ol.progtrckr {
+										    margin: 0;
+										    padding: 0;
+										    list-style-type: none;
+										    text-align: center;
+										}
+
+										ol.progtrckr li {
+										    display: inline-block;
+										    text-align: center;
+										    line-height: 3em;
+										}
+
+										ol.progtrckr[data-progtrckr-steps="5"] li { width: 19%; }
+
+										ol.progtrckr li.progtrckr-done {
+										    color: black;
+										    border-bottom: 5px solid #27AE60;
+										}
+										ol.progtrckr li.progtrckr-todo {
+										    color: silver; 
+										    border-bottom: 5px solid silver;
+										}
+
+										ol.progtrckr li.progtrckr-active {
+										    color: #ffdc52;
+										    border-bottom: 5px solid #ffdc52;
+										}
+
+										/*Positionnement des icones*/
+
+										ol.progtrckr li:after {
+										    content: "\00a0\00a0";
+										}
+										ol.progtrckr li:before {
+										    position: relative;
+										    bottom: -2.5em;
+										    float: left;
+										    left: 50%;
+										    line-height: 1em;
+										}
+										ol.progtrckr li.progtrckr-done:before {
+										    content: "\2713";
+										    color: white;
+										    background-color: #27AE60;
+										    height: 1.2em;
+										    width: 1.2em;
+										    line-height: 1.2em;
+										    border: none;
+										    border-radius: 1.2em;
+										}
+										ol.progtrckr li.progtrckr-todo:before {
+										    content: "\3007";
+										    color: silver;
+										    background-color: #a72525;
+										    font-size: 1.5em;
+										    bottom: -1.6em;
+										}
+
+										ol.progtrckr li.progtrckr-active:before {
+											content: "\3007";
+											color:#ffdc52;
+											background-color: #a72525;
+											font-size: 1.5em;
+										    bottom: -1.6em;
+										}
+
+										/*date picker*/
+										.ll-skin-melon {
+											font-size: 90%;
+										}
+
+										.ll-skin-melon .ui-widget {
+											font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+											background: #fff;
+											border: none;
+											border-radius: 0;
+											-webkit-border-radius: 0;
+											-moz-border-radius: 0;
+										}
+
+										.ll-skin-melon .ui-datepicker {
+											padding: 0;
+										}
+
+										.ll-skin-melon .ui-datepicker-header {
+											border: none;
+											background: transparent;
+											font-weight: normal;
+											font-size: 15px;
+										}
+
+										.ll-skin-melon .ui-datepicker-header .ui-state-hover {
+											background: transparent;
+											border-color: transparent;
+											cursor: pointer;
+											border-radius: 0;
+											-webkit-border-radius: 0;
+											-moz-border-radius: 0;
+										}
+
+										.ll-skin-melon .ui-datepicker .ui-datepicker-title {
+											margin-top: .4em;
+											margin-bottom: .3em;
+											color: #000;
+										}
+
+										.ll-skin-melon .ui-datepicker .ui-datepicker-prev-hover,
+										.ll-skin-melon .ui-datepicker .ui-datepicker-next-hover,
+										.ll-skin-melon .ui-datepicker .ui-datepicker-next,
+										.ll-skin-melon .ui-datepicker .ui-datepicker-prev {
+											top: .9em;
+											border:none;
+										}
+
+										.ll-skin-melon .ui-datepicker .ui-datepicker-prev-hover {
+											left: 2px;
+										}
+
+										.ll-skin-melon .ui-datepicker .ui-datepicker-next-hover {
+											right: 2px;
+										}
+
+										.ll-skin-melon .ui-datepicker .ui-datepicker-next span,
+										.ll-skin-melon .ui-datepicker .ui-datepicker-prev span {
+											background-image: url(img/ui-icons_454545_256x240.png);
+											background-position: -32px 0;
+											margin-top: 0;
+											top: 0;
+											font-weight: normal;
+										}
+
+										.ll-skin-melon .ui-datepicker .ui-datepicker-prev span {
+											background-position: -96px 0;
+										}
+
+										.ll-skin-melon .ui-datepicker table {
+											margin: 0;
+										}
+
+										.ll-skin-melon .ui-datepicker th {
+											padding: 1em 0;
+											color: #555;
+											font-size: 13px;
+											font-weight: normal;
+											border: none;
+											border-top: 1px solid #3a414d;
+										}
+
+										.ll-skin-melon .ui-datepicker td {
+											background: #555;
+											border: none;
+											padding: 0;
+										}
+
+										.ll-skin-melon td .ui-state-default {
+											background: transparent;
+											border: none;
+											text-align: center;
+											padding: .5em;
+											margin: 0;
+											font-weight: normal;
+											color: #efefef;
+											font-size: 16px;
+										}
+
+										.ll-skin-melon .ui-state-disabled  {
+											opacity: 1;
+										}
+
+										.ll-skin-melon .ui-state-disabled .ui-state-default {
+											color: #A06129;
+										}
+
+										.ll-skin-melon td .ui-state-active,
+										.ll-skin-melon td .ui-state-hover {
+											background: #ffdc52;
+										}
+
+
+
+
+
+
+
+
+
 /* ASSO */
 
 
@@ -261,6 +604,7 @@ h1, h2, h3 {
 #contact {
 	font-size: 1.22222222em;
 	text-align: center;
+	margin-top:35px;
 }
 
 

@@ -261,12 +261,12 @@ h1, h2, h3 {
 
 
 										#selected{
-										    width: 297px;
-										    height: 225px;
-										    background-image: url(img/malle2.png);
+										    width: 450px;
+										    height: 341px;
+										    background-image: url(img/malle.png);
 										    background-repeat: no-repeat;
-										    padding: 45px 33px;
-										    margin: 10px auto;
+										    padding: 53px;
+										   
 										}
 
 										/*form styles*/
@@ -312,9 +312,35 @@ h1, h2, h3 {
 											display: none;
 										}
 
-										#msform .votrekit {
+										.votrekit {
 											text-align: left;
 										}
+
+										.bulle {
+											width:199px;
+											height: 186px;
+											background-image: url(img/queuebulle.png);
+											background-repeat: no-repeat;
+											background-position: right bottom;
+										}
+
+										.conseilmascotte{
+											margin: 0;
+											padding: 15px 10px;
+											height: 150px;
+											background-color: #e6e6e6;
+											-webkit-border-radius: 30px 30px 0px 30px;
+											-moz-border-radius: 30px 30px 0px 30px;
+											border-radius: 30px 30px 0px 30px;
+											
+										}
+
+										fieldset #mascotte {
+											float: right;
+											width: 25%;
+										}
+
+										
 
 										/*buttons*/
 										#msform .action-button {

@@ -41,77 +41,94 @@ get_header();
           </ol>
 
           <!-- fieldsets -->
-          <fieldset class="votrekit">
+          <fieldset>
             <p class="fs-subtitle">Cliquez sur les icônes des jeux que vous désirez louer</p>
 
-            <div id="selected"></div>
+            <div id="mascotte">
+              <div class="bulle">
+                <p class="conseilmascotte">Vous avez 
+                  <?php echo $_POST['nb_invite'];  
+                  if (empty($_POST['nb_invite'])) {  echo '0'; } 
+                  ?> 
+                  invités, 
+                  <?php if (empty($_POST['nb_invite'])) {echo "vous n'avez pas d'amis ?";}
+                  else {  echo 'nous vous conseillons de prendre X jeux !'; }
+                  ?>
+                  </p>
+              </div>
+              <img src="<?php echo get_template_directory_uri(); ?>/img/mascotte1.png" width='199'>
+            </div>
 
-            <div id="nonSelected">
-            
-              <label for="blackjack"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/blackjack-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/blackjack-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/blackjack-icon2.png'></label>
-              <INPUT id="blackjack" type="checkbox" value="blackjack" name="game[]">    
-            
-              <label for="chuckaluck"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/chuckaluck-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/chuckaluck-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/chuckaluck-icon2.png'></label>
-              <INPUT id="chuckaluck" type="checkbox" value="chuckaluck" name="game[]">
-             
-              <label for="holdem"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/boule-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/boule-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/boule-icon2.png'></label>
-              <INPUT id="holdem" type="checkbox" value="holdempoker" name="game[]">
+            <div   class="votrekit">
+              <div id="selected"></div>
 
-              <label for="boule"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/holdempoker-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/holdempoker-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/holdempoker-icon2.png'></label>
-              <INPUT id="boule" type="checkbox" value="boule" name="game[]">
+              <div id="nonSelected">
+              
+                <label for="blackjack"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/blackjack-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/blackjack-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/blackjack-icon2.png'></label>
+                <INPUT id="blackjack" type="checkbox" value="blackjack" name="game[]">    
+              
+                <label for="chuckaluck"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/chuckaluck-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/chuckaluck-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/chuckaluck-icon2.png'></label>
+                <INPUT id="chuckaluck" type="checkbox" value="chuckaluck" name="game[]">
+               
+                <label for="holdem"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/boule-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/boule-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/boule-icon2.png'></label>
+                <INPUT id="holdem" type="checkbox" value="holdempoker" name="game[]">
 
-              <label for="roulette"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/roulette-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/roulette-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/roulette-icon2.png'></label>
-              <INPUT id="roulette" type="checkbox" value="roulette" name="game[]">
+                <label for="boule"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/holdempoker-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/holdempoker-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/holdempoker-icon2.png'></label>
+                <INPUT id="boule" type="checkbox" value="boule" name="game[]">
 
-              <label for="stud"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/studpoker-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/studpoker-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/studpoker-icon2.png'></label>
-              <INPUT id="stud" type="checkbox" value="studpoker" name="game[]">
+                <label for="roulette"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/roulette-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/roulette-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/roulette-icon2.png'></label>
+                <INPUT id="roulette" type="checkbox" value="roulette" name="game[]">
 
+                <label for="stud"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/studpoker-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/studpoker-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/studpoker-icon2.png'></label>
+                <INPUT id="stud" type="checkbox" value="studpoker" name="game[]">
+              </div>
+              <div id="calculdist">
+
+                <?php
+                      //Calcul de la distance entre l'adresse du client et le dépôt du matos
+
+                      $adresse2 = $_POST['adresse2'];
+                      $adresse2 = str_replace(" ", "+", $adresse2);
+                      $adresse2 = str_replace(",", "", $adresse2);
+                      $adresse2 = str_replace("-", "+", $adresse2);
+                      $adresse2 = htmlspecialchars($adresse2, ENT_QUOTES);
+                      $q = "http://maps.googleapis.com/maps/api/distancematrix/json?origins=".$adresse2.";&destinations=18+Hameau+des+Marronniers+77185+Lognes&mode=driving&sensor=false";
+                      $json = file_get_contents($q);
+
+                      $details = json_decode($json, TRUE);
+                      $dist_brut = $details['rows'][0]['elements'][0]['distance']['text'];
+                      $distance = str_replace(",", "", $dist_brut);
+                      $distance = str_replace("km", "", $distance);
+                      $distance = round($distance);
+                      $cout_loin = (0.60*$distance) + 50;
+                      // ********************************************************************** //
+                      // Message-mascotte en forme d'indication permettant à l'utilisateur de prédire ses frais de livraisons
+                      if ($distance < 75) {
+                        echo "Vous êtes à ".$distance."km du dépôt principal du matériel de Kit-Casino.fr. Cela vous permet donc de bénéficier d'un tarif de livraison préférentiel de 50 €.";
+                      }
+                      else{
+                        echo "Vous êtes à ".$distance." du dépôt principal du matériel de Kit-Caisno.fr. A cette distance, le prix de la livraison est de 50 € + 0,60 € par kilomètre excédent 75km. Vous aurez donc à payer ".$cout_loin." €.";
+                      }
+                    ?>
+              </div>
+              <input type="hidden" name="nom" value="<?php echo $_POST['nom']; ?>">
+              <input type="hidden" name="prenom" value="<?php echo $_POST['prenom']; ?>">
+              <input type="hidden" name="adresse" value="<?php echo $_POST['adresse']; ?>">
+              <input type="hidden" name="tel" value="<?php echo $_POST['tel']; ?>">
+              <input type="hidden" name="mail" value="<?php echo $_POST['mail']; ?>">
+              <input type="hidden" name="adresse2" value="<?php echo $_POST['adresse2']; ?>">
+              <input type="hidden" name="date" value="<?php echo $_POST['date']; ?>">
+              <input type="hidden" name="nb_invite" value="<?php echo $_POST['nb_invite']; ?>">
+              <input type="hidden" name="evenement" value="<?php echo $_POST['evenement']; ?>">
 
               
+            </div><br><br>
 
-          </div>
-          <div id="calculdist">
-            <?php
-                  //Calcul de la distance entre l'adresse du client et le dépôt du matos
-
-                  $adresse2 = $_POST['adresse2'];
-                  $adresse2 = str_replace(" ", "+", $adresse2);
-                  $adresse2 = str_replace(",", "", $adresse2);
-                  $adresse2 = str_replace("-", "+", $adresse2);
-                  $adresse2 = htmlspecialchars($adresse2, ENT_QUOTES);
-                  $q = "http://maps.googleapis.com/maps/api/distancematrix/json?origins=".$adresse2.";&destinations=18+Hameau+des+Marronniers+77185+Lognes&mode=driving&sensor=false";
-                  $json = file_get_contents($q);
-
-                  $details = json_decode($json, TRUE);
-                  $dist_brut = $details['rows'][0]['elements'][0]['distance']['text'];
-                  $distance = str_replace(",", "", $dist_brut);
-                  $distance = str_replace("km", "", $distance);
-                  $distance = round($distance);
-                  $cout_loin = (0.60*$distance) + 50;
-                  // ********************************************************************** //
-                  // Message-mascotte en forme d'indication permettant à l'utilisateur de prédire ses frais de livraisons
-                  if ($distance < 75) {
-                    echo "Vous êtes à ".$distance."km du dépôt principal du matériel de Kit-Casino.fr. Cela vous permet donc de bénéficier d'un tarif de livraison préférentiel de 50 €.";
-                  }
-                  else{
-                    echo "Vous êtes à ".$distance." du dépôt principal du matériel de Kit-Caisno.fr. A cette distance, le prix de la livraison est de 50 € + 0,60 € par kilomètre excédent 75km. Vous aurez donc à payer ".$cout_loin." €.";
-                  }
-                ?>
-          </div>
-          <input type="hidden" name="nom" value="<?php echo $_POST['nom']; ?>">
-          <input type="hidden" name="prenom" value="<?php echo $_POST['prenom']; ?>">
-          <input type="hidden" name="adresse" value="<?php echo $_POST['adresse']; ?>">
-          <input type="hidden" name="tel" value="<?php echo $_POST['tel']; ?>">
-          <input type="hidden" name="mail" value="<?php echo $_POST['mail']; ?>">
-          <input type="hidden" name="adresse2" value="<?php echo $_POST['adresse2']; ?>">
-          <input type="hidden" name="date" value="<?php echo $_POST['date']; ?>">
-          <input type="hidden" name="nb_invite" value="<?php echo $_POST['nb_invite']; ?>">
-          <input type="hidden" name="evenement" value="<?php echo $_POST['evenement']; ?>">
-
-          <input type="button" value="Retour en arrière" class="red" onClick="self.history.back();">
-          <input type="submit" name="submit" class="action-button" value="Poursuivre">
-            </fieldset>
+            <input type="button" value="Retour en arrière" class="red" onClick="self.history.back();">
+            <input type="submit" name="submit" class="action-button" value="Poursuivre">
+          </fieldset>
         </form>
+        
       </div>
     </div>
 </main>

@@ -28,13 +28,13 @@ get_header();
         La caution vous est rendue à la fin de votre location sous condition que le matériel soit en bon état.
       </p>
 
-      <h2>Demande de devis</h2>
+      <h2 id="focusform">Demande de devis</h2>
     </div>
   </div>
 
   <div class="devis">
       <div class="wrapper">
-        <form method="post" action="<?php echo get_permalink(107); ?>" id="msform">
+        <form method="post" action="<?php echo get_permalink(107); ?>#focusform" id="msform">
         <!-- progressbar -->
            <ol class="progtrckr" data-progtrckr-steps="5">
             <li class="progtrckr-done">Vous</li><li class="progtrckr-done">Votre soirée</li><li class="progtrckr-active">Votre kit</li><li class="progtrckr-todo">Récapitulatif</li>
@@ -42,7 +42,7 @@ get_header();
 
           <!-- fieldsets -->
           <fieldset>
-            <p class="fs-subtitle">Cliquez sur les icônes des jeux que vous désirez louer</p>
+            <p class="fs-subtitle">Cliquez sur les icônes des jeux que vous désirez louer. Il vous faut au minimum deux jeux.</p>
 
             <div id="mascotte">
               <div class="bulle">
@@ -60,29 +60,43 @@ get_header();
             </div>
 
             <div   class="votrekit">
-              <div id="selected"></div>
+              <div id="selected"><ul></ul></div>
 
               <div id="nonSelected">
-              
-                <label for="blackjack"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/blackjack-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/blackjack-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/blackjack-icon2.png'></label>
-                <INPUT id="blackjack" type="checkbox" value="blackjack" name="game[]">    
-              
-                <label for="chuckaluck"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/chuckaluck-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/chuckaluck-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/chuckaluck-icon2.png'></label>
-                <INPUT id="chuckaluck" type="checkbox" value="chuckaluck" name="game[]">
-               
-                <label for="holdem"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/boule-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/boule-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/boule-icon2.png'></label>
-                <INPUT id="holdem" type="checkbox" value="holdempoker" name="game[]">
+                <ul id="nonSelectedUl">
+                  <li class="blackjack"><label for="blackjack"><img src="<?php echo get_template_directory_uri(); ?>/img/blackjack-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/blackjack-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/blackjack-icon2.png'></label><br><p>Blackjack</p>
+                  <INPUT id="blackjack" type="checkbox" value="blackjack" name="game[]"></li>    
+                
+                  <li><label for="chuckaluck"><img src="<?php echo get_template_directory_uri(); ?>/img/chuckaluck-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/chuckaluck-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/chuckaluck-icon2.png'></label><br><p>Chuck a luck</p>
+                  <INPUT id="chuckaluck" type="checkbox" value="chuckaluck" name="game[]"></li>
+                 
+                  <li><label for="holdem"><img src="<?php echo get_template_directory_uri(); ?>/img/boule-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/boule-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/boule-icon2.png'><br></label><p>Hold'em poker</p>
+                  <INPUT id="holdem" type="checkbox" value="holdempoker" name="game[]"></li>
 
-                <label for="boule"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/holdempoker-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/holdempoker-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/holdempoker-icon2.png'></label>
-                <INPUT id="boule" type="checkbox" value="boule" name="game[]">
+                  <li><label for="boule"><img src="<?php echo get_template_directory_uri(); ?>/img/holdempoker-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/holdempoker-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/holdempoker-icon2.png'></label><br><p>Boule</p>
+                  <INPUT id="boule" type="checkbox" value="boule" name="game[]"></li>
 
-                <label for="roulette"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/roulette-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/roulette-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/roulette-icon2.png'></label>
-                <INPUT id="roulette" type="checkbox" value="roulette" name="game[]">
+                  <li><label for="roulette"><img src="<?php echo get_template_directory_uri(); ?>/img/roulette-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/roulette-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/roulette-icon2.png'></label></br><p>Roulette</p>
+                  <INPUT id="roulette" type="checkbox" value="roulette" name="game[]"></li>
 
-                <label for="stud"><img onclick="moveButton(this)" src="<?php echo get_template_directory_uri(); ?>/img/studpoker-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/studpoker-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/studpoker-icon2.png'></label>
-                <INPUT id="stud" type="checkbox" value="studpoker" name="game[]">
+                  <li><label for="stud"><img src="<?php echo get_template_directory_uri(); ?>/img/studpoker-icon2.png" alt="" data-checked='<?php echo get_template_directory_uri(); ?>/img/studpoker-icon-checked2.png' data-unchecked='<?php echo get_template_directory_uri(); ?>/img/studpoker-icon2.png'></label><br><p>Stud poker</p>
+                  <INPUT id="stud" type="checkbox" value="studpoker" name="game[]"></li>
+                </ul>
               </div>
-              <div id="calculdist">
+              
+              <input type="hidden" name="nom" value="<?php echo $_POST['nom']; ?>" required>
+              <input type="hidden" name="prenom" value="<?php echo $_POST['prenom']; ?>" required>
+              <input type="hidden" name="adresse" value="<?php echo $_POST['adresse']; ?>" required>
+              <input type="hidden" name="tel" value="<?php echo $_POST['tel']; ?>" required>
+              <input type="hidden" name="mail" value="<?php echo $_POST['mail']; ?>" required>
+              <input type="hidden" name="adresse2" value="<?php echo $_POST['adresse2']; ?>" required>
+              <input type="hidden" name="date" value="<?php echo $_POST['date']; ?>" required>
+              <input type="hidden" name="nb_invite" value="<?php echo $_POST['nb_invite']; ?>" required>
+              <input type="hidden" name="evenement" value="<?php echo $_POST['evenement']; ?>" required>
+
+              
+            </div><br><br>
+            <div id="calculdist">
 
                 <?php
                       //Calcul de la distance entre l'adresse du client et le dépôt du matos
@@ -111,21 +125,9 @@ get_header();
                       }
                     ?>
               </div>
-              <input type="hidden" name="nom" value="<?php echo $_POST['nom']; ?>">
-              <input type="hidden" name="prenom" value="<?php echo $_POST['prenom']; ?>">
-              <input type="hidden" name="adresse" value="<?php echo $_POST['adresse']; ?>">
-              <input type="hidden" name="tel" value="<?php echo $_POST['tel']; ?>">
-              <input type="hidden" name="mail" value="<?php echo $_POST['mail']; ?>">
-              <input type="hidden" name="adresse2" value="<?php echo $_POST['adresse2']; ?>">
-              <input type="hidden" name="date" value="<?php echo $_POST['date']; ?>">
-              <input type="hidden" name="nb_invite" value="<?php echo $_POST['nb_invite']; ?>">
-              <input type="hidden" name="evenement" value="<?php echo $_POST['evenement']; ?>">
-
-              
-            </div><br><br>
 
             <input type="button" value="Retour en arrière" class="red" onClick="self.history.back();">
-            <input type="submit" name="submit" class="action-button" value="Poursuivre">
+            <input type="submit" name="submit" class="action-button" value="Poursuivre" disabled>
           </fieldset>
         </form>
         
@@ -137,13 +139,13 @@ get_header();
 
 
 
-<script>
+<!--<script>
 function moveButton(elem){
     if( $(elem).closest("div").attr("id") == "nonSelected" ){
         $(elem).prependTo('#selected');
     }
     else{
-        $(elem).prependTo('#nonSelected'); 
+        $(elem).prependTo('#nonSelected ol'); 
     }
 }
 
@@ -160,6 +162,6 @@ $("img").click(function() {
 //    return state ? $(this).data('checked') : $(this).data('unchecked');
 // });
 //});
-</script>
+</script>-->
 
 <!--<?php get_footer(); ?>-->

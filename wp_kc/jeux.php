@@ -23,7 +23,7 @@ get_header(); ?>
 
 						foreach ($jeux as $jeu){
 
-							echo "<li><a href=#".get_field("id", $jeu->ID)."><img src='".get_field("icone", $jeu->ID)."' /><p>".get_the_title($jeu->ID)."</p></a>";
+							echo "<li><a href=#".get_field("id", $jeu->ID)."><img src='".get_field("icone", $jeu->ID)."' /><p>".get_the_title($jeu->ID)."</p></a></li>";
 
 							/*echo get_the_title($jeu->ID);
 

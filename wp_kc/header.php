@@ -74,7 +74,6 @@
 		}
 		// [END region_fillform]
 		</script>
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 		<script>

@@ -37,7 +37,7 @@ get_header();
 
 		<div class="devis">
 			<div class="wrapper">
-				<form method="post" action="<?php echo get_permalink(105); ?>" id="msform">
+				<form method="post" action="<?php echo get_permalink(105); ?>#focusform" id="msform">
 					<!-- progressbar -->
 					<ol class="progtrckr" data-progtrckr-steps="5">
 						<li class="progtrckr-active">Vous</li><li class="progtrckr-todo">Votre soirée</li><li class="progtrckr-todo">Votre kit</li><li class="progtrckr-todo">Récapitulatif</li>
@@ -46,13 +46,13 @@ get_header();
 					<!-- fieldsets -->
 					<fieldset>
 						<p class="fs-subtitle">Pour garder le contact plus aisément, merci de remplir les champs suivants</p>
-						<input type="text" name="nom" id="nom" autofocus placeholder="Nom"><br>
-						<input type="text" name="prenom" id="prenom" placeholder="Prénom"><br>
+						<input type="text" name="nom" id="nom" placeholder="Nom" required><br>
+						<input type="text" name="prenom" id="prenom" placeholder="Prénom" required><br>
 						<span id="locationField">
-							<input id="autocomplete" name="adresse" onFocus="geolocate()" type="text" autocomplete="off" size="50" placeholder="Adresse"></input>
+							<input id="autocomplete" name="adresse" onFocus="geolocate()" type="text" autocomplete="off" size="50" placeholder="Adresse" required></input>
 						</span><br>
-						<input type="tel" name="tel" id="tel" placeholder="Téléphone"><br>
-						<input type="email" name="mail" id="mail" placeholder="E-mail"><br>
+						<input type="tel" name="tel" id="tel" placeholder="Téléphone" required><br>
+						<input type="email" name="mail" id="mail" placeholder="E-mail" required><br>
 						<input type="submit" name="submit" class="next action-button" value="Poursuivre">
 					</fieldset>
 				</form>

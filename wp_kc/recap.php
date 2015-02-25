@@ -26,7 +26,7 @@ get_header();
         La caution vous est rendue à la fin de votre location sous condition que le matériel soit en bon état.
       </p>
 
-      <h2>Demande de devis</h2>
+      <h2 id="focusform">Demande de devis</h2>
     </div>
   </div>
 

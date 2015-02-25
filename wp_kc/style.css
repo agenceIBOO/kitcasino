@@ -128,13 +128,14 @@ h1, h2, h3 {
 	width:100%;
 	font-size:25px;
 	font-family: 'robotothin';
-	color:#000;
+	
 }
 
 #nav-jeux ul li {
 	float: left;
 	width:16.6%;
 	text-align: center;
+	color:#000;
 }
 
 #nav-jeux div {
@@ -256,6 +257,10 @@ h1, h2, h3 {
 	background-color:#a72525; 
 }
 
+#calculdist {
+	clear: both;
+}
+
 
 
 
@@ -265,8 +270,39 @@ h1, h2, h3 {
 										    height: 341px;
 										    background-image: url(img/malle.png);
 										    background-repeat: no-repeat;
+										    margin: 0 auto;
 										    padding: 53px;
 										   
+										}
+
+										#nonSelected{
+											height: 200px;
+										}
+
+										#nonSelected img, #selected img {
+											cursor: pointer;
+										}
+										
+										#nonSelected ul {
+											width: 594px;
+											margin: 0 auto;
+											padding: 0;
+
+										}
+
+										#nonSelected ul li, #selected li{
+											list-style: none;
+											float: left;
+											width: 99px;
+											z-index: 1000;
+										}
+
+										#nonSelected ul li p, #selected li p{
+											text-align: center;
+											display: inline-block;
+											width: 99px;
+											color:#fff;
+											font-size: 0.75em;
 										}
 
 										/*form styles*/
@@ -314,6 +350,7 @@ h1, h2, h3 {
 
 										.votrekit {
 											text-align: left;
+											width: 75%;
 										}
 
 										.bulle {
@@ -340,7 +377,7 @@ h1, h2, h3 {
 											width: 25%;
 										}
 
-										
+
 
 										/*buttons*/
 										#msform .action-button {
@@ -354,6 +391,17 @@ h1, h2, h3 {
 											padding: 10px 5px;
 											margin: 10px 5px;
 										}
+
+										#msform .action-button:disabled {
+											background-color:#abb3af;
+											font-family: 'robotothin';
+										}
+										#msform .action-button:disabled:hover {
+											background-color:#abb3af;
+											font-family: 'robotothin';
+											cursor: default;
+										}
+
 										#msform .action-button:hover, #msform .action-button:focus {
 											background-color: #0d7f3d;
 										}
@@ -372,7 +420,7 @@ h1, h2, h3 {
 											border: none !important;
 											border-radius: 1px !important;
 										}
-										.red:hover, .red:focus {
+										#msform input.red:hover, .red:focus {
 											background-color: #d82c24;
 										}
 
@@ -408,7 +456,7 @@ h1, h2, h3 {
 										ol.progtrckr[data-progtrckr-steps="5"] li { width: 19%; }
 
 										ol.progtrckr li.progtrckr-done {
-										    color: black;
+										    color: #27AE60;
 										    border-bottom: 5px solid #27AE60;
 										}
 										ol.progtrckr li.progtrckr-todo {

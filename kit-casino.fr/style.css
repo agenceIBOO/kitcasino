@@ -156,6 +156,7 @@ h1, h2, h3 {
 	background-image: url(img/avantages-pic.png);
 	background-position: 95%;
 	background-repeat: no-repeat;
+	clear: both;
 }
 
 #regles {
@@ -210,6 +211,11 @@ h1, h2, h3 {
 
 #studpoker {
 	display:none;
+}
+
+.images-jeux li{
+	list-style: none;
+	display: inline;
 }
 
 
@@ -282,6 +288,10 @@ h1, h2, h3 {
 .recap h3 {
 	text-align: center;
 	font-family: 'cards';
+}
+
+.prix {
+	text-align: left;
 }
 
 
@@ -885,6 +895,14 @@ color: white !important;
 }
 
 
+/* 404 page not found */
+
+#notfound {
+	font-size: 2em;
+	text-align: center;
+}
+
+
 /*------------------------------------*\
     MAIN
 \*------------------------------------*/
@@ -921,7 +939,7 @@ body {
     *zoom:1;
 }
 img {
-	max-width:100%;
+	
 	/*vertical-align:bottom;*/
 }
 a {

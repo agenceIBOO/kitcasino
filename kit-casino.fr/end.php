@@ -73,7 +73,35 @@ get_header();
         $evenement = htmlspecialchars($_POST['evenement'], ENT_QUOTES);
         $game = htmlspecialchars($_POST['game'], ENT_QUOTES);
         $game = explode(",", $game);
+        
 
+
+       
+        $prixkit = get_field( "tarif", 56 );
+        $prixjeusup = get_field( "tarif", 57 );
+        $cautionkit = get_field( "tarif", 136 );
+        $cautionjeusup = get_field("tarif", 137);
+        $livraison = get_field("tarif", 59);
+        $kilometrage = get_field("tarif", 58);
+
+
+        //calcul cout livraison etc
+        $adresse2 = $_POST['adresse2'];
+        $adresse2 = str_replace(" ", "+", $adresse2);
+        $adresse2 = str_replace(",", "", $adresse2);
+        $adresse2 = str_replace("-", "+", $adresse2);
+        $adresse2 = htmlspecialchars($adresse2, ENT_QUOTES);
+        $q = "http://maps.googleapis.com/maps/api/distancematrix/json?origins=".$adresse2.";&destinations=18+Hameau+des+Marronniers+77185+Lognes&mode=driving&sensor=false";
+        $json = file_get_contents($q);
+
+        $details = json_decode($json, TRUE);
+        $dist_brut = $details['rows'][0]['elements'][0]['distance']['text'];
+        $distance = str_replace(",", "", $dist_brut);
+        $distance = str_replace("km", "", $distance);
+        $distance = round($distance);
+        $cout_loin = (get_field("tarif", 58)*($distance-75)) + 50;
+
+       
 
         // Create post object
         $my_post = array(
@@ -98,6 +126,19 @@ get_header();
         update_field( "field_54eb43ea2a9b9", $evenement , $post_id );
         update_field( "field_54eb44e12a9ba", $game , $post_id );
 
+        //envoi infos tarif livraison
+        if ($distance < 75) {
+          update_field( "field_54ee20a7db8f2", $livraison, $post_id); 
+        }
+        elseif ($distance > 75) {
+          update_field( "field_54ee20a7db8f2", $cout_loin, $post_id);
+        }
+
+        
+
+        
+        
+              
         ?>
 
         <form method="post" action="" id="msform">
@@ -109,6 +150,9 @@ get_header();
           <fieldset>
             <p class="fs-subtitle">Votre devis est arrivé à bon port, à nous de jouer maintenant! Nous vous contacterons dans les plus brefs délais. Toutefois si cela est urgent, n'hésitez pas à faire le premier pas! : 06xxxxxxxx</p>
           </fieldset>
+
+
+
           </form>
         </div>
       </div>

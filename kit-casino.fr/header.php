@@ -116,7 +116,7 @@
 							<li><a href="http://www.kit-casino.fr/wordpress/"><img src="<?php echo get_template_directory_uri(); ?>/img/home_off.png" alt="home"> </a></li>
 							<li><a href="http://www.kit-casino.fr/wordpress/jeux">Nos jeux</a></li>
 							<li><a href="http://www.kit-casino.fr/wordpress/association">L'association</a></li>
-							<li><a href="http://www.kit-casino.fr/wordpress/tarifs-devis">Tarifs et devis</a></li>
+							<li><a href="http://www.kit-casino.fr/wordpress/tarifs-et-devis">Tarifs et devis</a></li>
 							<li><a href="http://www.kit-casino.fr/wordpress/contact">Contact</a></li>
 						</ul>
 					</nav>

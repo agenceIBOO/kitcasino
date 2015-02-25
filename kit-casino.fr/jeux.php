@@ -55,9 +55,9 @@ get_header(); ?>
 								echo "<div id='".get_field("id", $jeu->ID)."'>
 								<div class='wrapper'>";
 
-								echo "<img src='".get_field("image", $jeu->ID)."' width='33%' />
-								<img src='".get_field("image_2", $jeu->ID)."' width='33%' />
-								<img src='".get_field("image_3", $jeu->ID)."' width='33%' />";
+								echo "<ul class='images-jeux'><li><img src='".get_field("image", $jeu->ID)."' width='33%' /></li>
+								<li><img src='".get_field("image_2", $jeu->ID)."' width='33%' /></li>
+								<li><img src='".get_field("image_3", $jeu->ID)."' width='33%' /></li>";
 								
 								echo "<h2 id='materiel'>Matériel fourni</h2>";
 								

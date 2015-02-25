@@ -2,23 +2,14 @@
 
 	<main role="main">
 		<!-- section -->
-		<section>
-
-			<!-- article -->
-			<article id="post-404">
-
-				<h1><?php _e( 'Page not found', 'html5blank' ); ?></h1>
-				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'html5blank' ); ?></a>
-				</h2>
-
-			</article>
-			<!-- /article -->
-
-		</section>
+		<div id="notfound">
+			<p>
+			404 PAGE NOT FOUND<br>
+			Nous vous invitons à retourner à la page précédente.
+			</p>
+		</div>
 		<!-- /section -->
 	</main>
 
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

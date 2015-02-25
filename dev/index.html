@@ -4,6 +4,20 @@
   <meta charset="utf-8">
   <title>Vous</title>
 <link rel="stylesheet" href="style.css">
+
+<!-- for Google -->
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<!-- for Facebook -->          
+<meta property="og:title" content="">
+<meta property="og:type" content="website">
+<meta property="og:image" content=""> <!-- 1200x630px -->
+<meta property="og:url" content="http://www.kit-casino.fr">
+<meta property="og:description" content="">
+
+
+
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true&amp;libraries=places"></script>
     <script>
 // This example displays an address form, using the autocomplete feature
@@ -59,11 +73,27 @@ function fillInAddress() {
 
   <body onload="initialize()">
 
-  <form method="post" action="votre_soiree.php" id="msform">
-  <!-- progressbar -->
-  <ol class="progtrckr" data-progtrckr-steps="5">
+<ol class="progtrckr" data-progtrckr-steps="5">
     <li class="progtrckr-todo">Vous</li><li class="progtrckr-todo">Votre soirée</li><li class="progtrckr-todo">Vos jeux</li><li class="progtrckr-todo">Récapitulatif</li><li class="progtrckr-todo">Confirmation</li>
   </ol>
+
+<!-- Progress-bar pour les petits périphériques -->
+<div class="progress">
+  <div class="progress-bar progress-bar-warning progress-bar-striped active" style="min-width: 25%">
+    <span>Vous (1/4)</span>
+  </div>
+  <div class="progress-bar progress-bar-danger progress-bar-striped active" style="min-width: 25%">
+    <span>Votre soirée (2/4)</span>
+  </div>
+  <div class="progress-bar progress-bar-danger progress-bar-striped active" style="min-width: 25%">
+    <span>Vos jeux (3/4)</span>
+  </div>
+  <div class="progress-bar progress-bar-danger progress-bar-striped active" style="min-width: 25%">
+    <span>Récapitulatif (4/4)</span>
+  </div>
+</div>
+
+  <form method="post" action="votre_soiree.php" id="msform">
   <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">A propos de vous</h2>
@@ -76,6 +106,10 @@ function fillInAddress() {
       <input type="submit" name="submit" class="next action-button" value="Poursuivre">
   </fieldset>
   </form>
+
+<!-- Mascotte -->
+<div class="mascotte">
+</div>
 
 <!-- Mascotte: Ces informations nous serviront par la suite afin de vous contacter pour finaliser le devis. -->
 </body>

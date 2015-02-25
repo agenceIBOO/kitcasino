@@ -1,19 +1,37 @@
-<?php 
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Vos jeux</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
 
-/**
-* Template Name: Recapitulatif
-*/
 
-get_header(); 
+<ol class="progtrckr" data-progtrckr-steps="5">
+    <li class="progtrckr-todo">Vous</li><li class="progtrckr-todo">Votre soirée</li><li class="progtrckr-todo">Vos jeux</li><li class="progtrckr-todo">Récapitulatif</li><li class="progtrckr-todo">Confirmation</li>
+  </ol>
 
-?>
-
+<!-- Progress-bar pour les petits périphériques -->
+<div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped active" style="min-width: 25%">
+    <span>Vous (1/4)</span>
+  </div>
+  <div class="progress-bar progress-bar-success progress-bar-striped active" style="min-width: 25%">
+    <span>Votre soirée (2/4)</span>
+  </div>
+  <div class="progress-bar progress-bar-success progress-bar-striped active" style="min-width: 25%">
+    <span>Vos jeux (3/4)</span>
+  </div>
+  <div class="progress-bar progress-bar-warning progress-bar-striped active" style="min-width: 25%">
+    <span>Récapitulatif (4/4)</span>
+  </div>
+</div>
 
 <form method="post" action="end.php" id="msform">
-  <!-- progressbar -->
-  <ol class="progtrckr" data-progtrckr-steps="5">
-    <li class="progtrckr-done">Vous</li><li class="progtrckr-done">Votre soirée</li><li class="progtrckr-done">Vos jeux</li><li class="progtrckr-done">Récapitulatif</li><li class="progtrckr-todo">Confirmation</li>
-  </ol>
   <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">Récapitulatif</h2>
@@ -30,9 +48,9 @@ get_header();
     Nombre d'invités: <?php echo $_POST['nb_invite']; ?><br>
     Type d'évènement: <?php echo $_POST['evenement']; ?><br>
     Jeu(x) sélectionné(s): <?php if(empty($_POST['game'])){
-    echo "Aucun jeux n'a été séléctionné :("; } else { $N = count($_POST['game']); echo($N." jeux choisis : "); for($i=0; $i < $N; $i++){ echo($_POST['game'][$i] . ", "); }
-}
-?>
+    echo "Aucun jeux n'a été séléctionné :("; } else { $N = count($_POST['game']); echo($N." jeux choisis : "); for($i=0; $i < $N; $i++){ echo($_POST['game'][$i] . ", "); }}?><br>
+    Mode d'acheminement désiré: <?php echo $_POST['acheminement']; ?>
+
 <hr>
   </p>
 
@@ -55,6 +73,7 @@ get_header();
       echo "Vous avez opté pour un kit avec jeu(x) supplémentaire(s) contenant ".$N." jeux.<br> TOTAL: ".$prix." € + ".$caution." € de caution, soit ".$total." € au total."." La caution vous sera remise après rendu du matériel.";
     }
   ?>
+
   </p>
   <input type="hidden" name="nom" value="<?php echo $_POST['nom']; ?>">
 <input type="hidden" name="prenom" value="<?php echo $_POST['prenom']; ?>">
@@ -66,6 +85,7 @@ get_header();
 <input type="hidden" name="nb_invite" value="<?php echo $_POST['nb_invite']; ?>">
 <input type="hidden" name="evenement" value="<?php echo $_POST['evenement']; ?>">
 <input type="hidden" name="game" value="<?php $game = implode(', ', $_POST['game']); echo $game; ?>">
+<input type="hidden" name="acheminement" value="<?php echo $_POST['acheminement']; ?>">
       <input type="button" value="Retour en arrière" class="red" onClick="location.href='vos_jeux.php'">
       <input type="submit" name="submit" class="next action-button" value="Poursuivre">
   </fieldset>

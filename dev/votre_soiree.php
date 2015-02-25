@@ -11,6 +11,22 @@
 background: #27AE60 !important;
 color: white !important;
 }
+
+@media screen and (max-width: 900px) {
+    #xs-datepicker{
+      display: block;
+    }
+
+    #date-picker-input-1{
+      display: none;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #xs-datepicker{
+      display: none;
+    }
+}
 </style>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -89,17 +105,34 @@ function fillInAddress() {
 </head>
 <body onload="initialize()">
 
-  <form method="post" action="vos_jeux.php" id="msform">
-  <!-- progressbar -->
-   <ol class="progtrckr" data-progtrckr-steps="5">
-    <li class="progtrckr-done">Vous</li><li class="progtrckr-todo">Votre soirée</li><li class="progtrckr-todo">Vos jeux</li><li class="progtrckr-todo">Récapitulatif</li><li class="progtrckr-todo">Confirmation</li>
+<ol class="progtrckr" data-progtrckr-steps="5">
+    <li class="progtrckr-todo">Vous</li><li class="progtrckr-todo">Votre soirée</li><li class="progtrckr-todo">Vos jeux</li><li class="progtrckr-todo">Récapitulatif</li><li class="progtrckr-todo">Confirmation</li>
   </ol>
+
+<!-- Progress-bar pour les petits périphériques -->
+<div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped active" style="min-width: 25%">
+    <span>Vous (1/4)</span>
+  </div>
+  <div class="progress-bar progress-bar-warning progress-bar-striped active" style="min-width: 25%">
+    <span>Votre soirée (2/4)</span>
+  </div>
+  <div class="progress-bar progress-bar-danger progress-bar-striped active" style="min-width: 25%">
+    <span>Vos jeux (3/4)</span>
+  </div>
+  <div class="progress-bar progress-bar-danger progress-bar-striped active" style="min-width: 25%">
+    <span>Récapitulatif (4/4)</span>
+  </div>
+</div>
+
+  <form method="post" action="vos_jeux.php" id="msform">
   <!-- fieldsets -->
 <fieldset>
     <h2 class="fs-title">Votre soirée</h2>
     <h3 class="fs-subtitle">Dites-nous en plus sur la soirée que vous voulez organiser</h3>
     <span id="locationField"><input id="autocomplete" name="adresse2" onFocus="geolocate()" type="text" size="50" placeholder="Adresse de l'évènement" autofocus></input></span><br>
-    <input type="text" name="date" placeholder="Date de la soirée" id="date-picker-input-1"><br>
+    <input type="text" name="date" placeholder="Date de la soirée" id="date-picker-input-1">
+    <input type="date" name="date" placeholder="Date de la soirée" id="xs-datepicker">
     <input type="number" name="nb_invite" placeholder="Nombre d'invités"><br>
   <div class="txtleft">
        <select name="evenement" id="evenement">

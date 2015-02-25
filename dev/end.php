@@ -7,6 +7,29 @@
 get_header(); 
 
 ?>
+
+ <!-- Progress-bar pour le Desktop -->
+<ol class="progtrckr" data-progtrckr-steps="5">
+    <li class="progtrckr-todo">Vous</li><li class="progtrckr-todo">Votre soirée</li><li class="progtrckr-todo">Vos jeux</li><li class="progtrckr-todo">Récapitulatif</li><li class="progtrckr-todo">Confirmation</li>
+  </ol>
+
+<!-- Progress-bar pour les petits périphériques -->
+<div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped active" style="min-width: 25%">
+    <span>Vous (1/4)</span>
+  </div>
+  <div class="progress-bar progress-bar-success progress-bar-striped active" style="min-width: 25%">
+    <span>Votre soirée (2/4)</span>
+  </div>
+  <div class="progress-bar progress-bar-success progress-bar-striped active" style="min-width: 25%">
+    <span>Vos jeux (3/4)</span>
+  </div>
+  <div class="progress-bar progress-bar-warning progress-bar-striped active" style="min-width: 25%">
+    <span>Récapitulatif (4/4)</span>
+  </div>
+</div>
+
+
 <main role="main">
   <div class="wrapper">
     <div class="tarifs">
@@ -46,9 +69,10 @@ get_header();
         $nb_invite = htmlspecialchars($_POST['nb_invite'], ENT_QUOTES);
         $evenement = htmlspecialchars($_POST['evenement'], ENT_QUOTES);
         $game = htmlspecialchars($_POST['game'], ENT_QUOTES);
+        $acheminement = htmlspecialchars($_POST['acheminement'], ENT_QUOTES);
 
-        $sql = "INSERT INTO donnees (nom, prenom, adresse, tel, email, adresse2, date, nb_invite, evenement, jeux)
-        VALUES ('$nom', '$prenom', '$adresse', '$tel', '$mail', '$adresse2', '$date', '$nb_invite', '$evenement', '$game')";
+        $sql = "INSERT INTO donnees (nom, prenom, adresse, tel, email, adresse2, date, nb_invite, evenement, jeux, acheminement)
+        VALUES ('$nom', '$prenom', '$adresse', '$tel', '$mail', '$adresse2', '$date', '$nb_invite', '$evenement', '$game', '$acheminement')";
 
         if (mysqli_query($conn, $sql)) {
             echo "";

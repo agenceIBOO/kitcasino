@@ -21,13 +21,13 @@ get_header();
           1 kit = 2 jeux
         </p>
         <p>
-          200€ le kit
+          <?php echo get_field( "tarif", 56 ); ?>€ le kit
         </p>
         <p>
-          75€ par jeu supplémentaire
+          <?php echo get_field( "tarif", 57 ); ?>€ par jeu supplémentaire
         </p>
         <p>
-          Caution = 1375 € + 300€ par jeux supplémentaire.<br>
+          Caution = <?php echo get_field( "tarif", 136 ); ?>€ + <?php echo get_field( "tarif", 137 ); ?>€ par jeux supplémentaire.<br>
           La caution vous est rendue à la fin de votre location sous condition que le matériel soit en bon état.
         </p>
 

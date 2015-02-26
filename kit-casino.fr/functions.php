@@ -454,7 +454,8 @@ function create_post_type_html5()
             
         ),
         'public' => true,
-        'has_archive' => true
+        'has_archive' => true,
+        //"show_in_menu" => false
     ));
     
 }

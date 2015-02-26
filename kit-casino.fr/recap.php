@@ -66,6 +66,12 @@ get_header();
                   echo($_POST['game'][$i] . ", "); /*}*/
                 }?></li>
 
+              <li><span>Recupération de votre kit :</span> <?php 
+              
+                echo $_POST['recuperation'];  
+                
+              ?></li>
+
                
               <br><hr><br>
             </ul>
@@ -98,8 +104,7 @@ get_header();
                 $cautionjeusup = get_field("tarif", 137);
                 $livraison = get_field("tarif", 59);
                 $kilometrage = get_field("tarif", 58);
-
-
+               
                 // Message-mascotte en forme d'indication permettant à l'utilisateur de prédire ses frais de livraisons
                 if ($distance < 75) {
                   echo "Vous êtes à ".$distance."km du dépôt principal du matériel de Kit-Casino.fr. Cela vous permet donc de bénéficier d'un tarif de livraison préférentiel de ".$livraison."€.<br><br>";
@@ -107,7 +112,6 @@ get_header();
                 else{
                   echo "Vous êtes à ".$distance."km du dépôt principal du matériel de Kit-Caisno.fr. A cette distance, le prix de la livraison est de ".$livraison."€ + ".$kilometrage."0 € par kilomètre excédent 75km. Vous aurez donc à payer ".$cout_loin." €.<br><br>";
                 }
-
 
               
                 if ($N == 2 && $distance < 75) {
@@ -126,6 +130,8 @@ get_header();
               //echo "TOTAL: ".$prix." € + ".$cautiontotale." € de caution, soit ".$total." € au total."." La caution vous sera remise après rendu du matériel.";
             ?>
             </p>
+            
+
             <input type="hidden" name="nom" value="<?php echo $_POST['nom']; ?>">
             <input type="hidden" name="prenom" value="<?php echo $_POST['prenom']; ?>">
             <input type="hidden" name="adresse" value="<?php echo $_POST['adresse']; ?>">
@@ -136,6 +142,8 @@ get_header();
             <input type="hidden" name="nb_invite" value="<?php echo $_POST['nb_invite']; ?>">
             <input type="hidden" name="evenement" value="<?php echo $_POST['evenement']; ?>">
             <input type="hidden" name="game" value="<?php $game = implode(', ', $_POST['game']); echo $game; ?>">
+            <input type="hidden" name="recuperation" value="<?php echo $_POST['recuperation']; ?>">
+
 
             <input type="button" value="Retour en arrière" class="red" onClick="location.href='<?php echo get_permalink(109) ?>'">
             <input type="submit" name="submit" class="next action-button" value="Poursuivre">

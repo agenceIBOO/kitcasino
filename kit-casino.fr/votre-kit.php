@@ -118,12 +118,22 @@ get_header();
                       // ********************************************************************** //
                       // Message-mascotte en forme d'indication permettant à l'utilisateur de prédire ses frais de livraisons
                       if ($distance < 75) {
-                        echo "Vous êtes à ".$distance."km du dépôt principal du matériel de Kit-Casino.fr. Cela vous permet donc de bénéficier d'un tarif de livraison préférentiel de 50 €.";
+                        echo "<p>Vous êtes à ".$distance."km du dépôt principal du matériel de Kit-Casino.fr. Cela vous permet donc de bénéficier d'un tarif de livraison préférentiel de 50 €.</p>";
                       }
                       else{
-                        echo "Vous êtes à ".$distance." du dépôt principal du matériel de Kit-Caisno.fr. A cette distance, le prix de la livraison est de 50 € + 0,60 € par kilomètre excédent 75km. Vous aurez donc à payer ".$cout_loin." €.";
-                      }
-                    ?>
+                        echo "<p>Vous êtes à ".$distance." du dépôt principal du matériel de Kit-Caisno.fr. A cette distance, le prix de la livraison est de 50 € + 0,60 € par kilomètre excédent 75km. Vous aurez donc à payer ".$cout_loin." €.</p>";
+                      } 
+
+                      ?>
+                      <p id='recuptitre'>Comment souhaitez vous récupérer votre Kit ?</p><p>Vous pouvez opter pour la livraison ou un retrait en point de dépot.<br>Adresse du point de dépot : là bas, LOGNES, 77185.</p>
+                      <label for='livraison'>Livraison</label>
+                      <input id='livraison' type='radio' value='livraison' name='recuperation'><br>
+                      <label for='retrait'>Retrait</label>
+                      <input id='retrait' type='radio' value='retrait' name='recuperation'><br><br>
+                  
+
+
+
               </div>
 
             <input type="button" value="Retour en arrière" class="red" onClick="self.history.back();">

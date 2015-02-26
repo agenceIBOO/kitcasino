@@ -73,6 +73,7 @@ get_header();
         $evenement = htmlspecialchars($_POST['evenement'], ENT_QUOTES);
         $game = htmlspecialchars($_POST['game'], ENT_QUOTES);
         $game = explode(",", $game);
+        $recuperation = htmlspecialchars($_POST['recuperation'], ENT_QUOTES);
         
 
 
@@ -120,11 +121,13 @@ get_header();
         update_field( "field_54eb43652a9b3", $adresse , $post_id );
         update_field( "field_54eb43792a9b4", $tel , $post_id );
         update_field( "field_54eb438c2a9b5", $mail , $post_id );
-        update_field( "field_54eb439c2a9b6", $adresse2 , $post_id );
+        update_field( "field_54eb439c2a9b6", htmlspecialchars($_POST['adresse2']) , $post_id );
         update_field( "field_54eb43a62a9b7", $date , $post_id );
         update_field( "field_54eb43b72a9b8", $nb_invite , $post_id );
         update_field( "field_54eb43ea2a9b9", $evenement , $post_id );
         update_field( "field_54eb44e12a9ba", $game , $post_id );
+        update_field( "field_54efa27027698", $recuperation, $post_id);
+        update_field( "field_54efa56bcbb45", ($distance-75), $post_id);
 
         //envoi infos tarif livraison
         if ($distance < 75) {

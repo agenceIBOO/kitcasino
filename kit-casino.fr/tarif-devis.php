@@ -65,7 +65,7 @@ get_header();
 						<input type="text" name="nom" id="nom" placeholder="Nom" required><br>
 						<input type="text" name="prenom" id="prenom" placeholder="Prénom" required><br>
 						<span id="locationField">
-							<input id="autocomplete" name="adresse" onFocus="geolocate()" type="text" autocomplete="off" size="50" placeholder="Adresse (ex: 22 rue de la Paix, Paris, France)" pattern="" required></input>
+							<input id="autocomplete" name="adresse" onFocus="geolocate()" type="text" autocomplete="off" size="50" placeholder="Adresse (ex: 22 rue de la Paix, Paris, France)" required></input>
 						</span><br>
 						<input type="tel" name="tel" id="tel" placeholder="Téléphone" required><br>
 						<input type="email" name="mail" id="mail" placeholder="E-mail" required><br>

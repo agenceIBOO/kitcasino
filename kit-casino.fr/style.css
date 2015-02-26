@@ -88,18 +88,22 @@ h1, h2, h3 {
 	color: #e6e6e6;
 	font-family: 'robotothin';
 	font-size: 2em;
-	margin-bottom:75px;
-	height: 360px;
+	margin-bottom:75px;	
+}
+
+#videoWrapper{
 	overflow:hidden;
+	height: 360px;
 }
 
 #video .wrapper {
 	background-image: url(img/background-bandeau.jpg);
 	background-position: 95%;
 	background-repeat: no-repeat;
+	clear: both;
 }
 
-#video span {
+#video p span {
 	font-family: 'cards';
 }
 
@@ -397,13 +401,19 @@ h1, h2, h3 {
 											outline: none;
 										}
 
-										#msform fieldset input[type=checkbox] {
+										#nonSelected input[type=checkbox], #selected input[type=checkbox] {
 											display: none;
 										}
+
 
 										.votrekit {
 											text-align: left;
 											width: 75%;
+										}
+
+										#recuptitre {
+											font-family: 'robotobold';
+											font-size: 1.22222222em;
 										}
 
 										.bulle {
@@ -412,6 +422,15 @@ h1, h2, h3 {
 											background-image: url(img/queuebulle.png);
 											background-repeat: no-repeat;
 											background-position: right bottom;
+										}
+
+										input#livraison, input#retrait {
+											width: 20px;
+										}
+
+										label[for=livraison], label[for=retrait] {
+											display: inline-block;
+											width:150px;
 										}
 
 										.conseilmascotte{

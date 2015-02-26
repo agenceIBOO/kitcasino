@@ -12,11 +12,13 @@ get_header(); ?>
 	<main role="main">
 	
 		<div id="video">
-			<video autoplay loop class="bgvid">
-				<source src="<?php echo get_template_directory_uri(); ?>/video/video_background.mp4" type="video/mp4" />
-				<source src="<?php echo get_template_directory_uri(); ?>/video/video_background.webm" type="video/webm" />
-				<source src="<?php echo get_template_directory_uri(); ?>/video/video_background.ogv" type="video/ogg" />
-			</video>
+			<div id="videoWrapper">
+				<video autoplay loop class="bgvid">
+					<source src="<?php echo get_template_directory_uri(); ?>/video/video_background.mp4" type="video/mp4" />
+					<source src="<?php echo get_template_directory_uri(); ?>/video/video_background.webm" type="video/webm" />
+					<source src="<?php echo get_template_directory_uri(); ?>/video/video_background.ogv" type="video/ogg" />
+				</video>
+			</div>
 			<p class="wrapper">Location de matériel de <span>Casino</span></p>
 		</div>
 		
@@ -42,9 +44,25 @@ get_header(); ?>
 			<div id="partenaires">
 				<h2><?php
 					echo get_field("titre_2");
-					?></h2>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/partenaire_1.jpg" alt="partenaire1">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/partenaire_1.jpg" alt="partenaire2">
+					?>
+				</h2>
+
+				<?php
+					$args = array(
+					'posts_per_page'   => -1,
+					'post_type'        => 'partenaire',
+					'post_status'      => 'publish'
+					);
+
+					$partenaires = get_posts( $args );
+
+					foreach ($partenaires as $partenaire){
+
+						echo "<img src=".get_field("photo_du_partenaire", $partenaire->ID)." width='308' alt='".get_the_title($partenaire->ID)."' />";
+					
+					}
+				?>
+				
 			</div>
 
 

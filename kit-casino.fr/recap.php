@@ -136,7 +136,7 @@ get_header();
             <input type="hidden" name="nb_invite" value="<?php echo $_POST['nb_invite']; ?>">
             <input type="hidden" name="evenement" value="<?php echo $_POST['evenement']; ?>">
             <input type="hidden" name="game" value="<?php $game = implode(', ', $_POST['game']); echo $game; ?>">
-            
+
             <input type="button" value="Retour en arrière" class="red" onClick="location.href='<?php echo get_permalink(109) ?>'">
             <input type="submit" name="submit" class="next action-button" value="Poursuivre">
           </fieldset>
@@ -144,4 +144,4 @@ get_header();
         </div>
       </div>
 
-<!--<?php get_footer(); ?>-->
+<?php get_footer(); ?>

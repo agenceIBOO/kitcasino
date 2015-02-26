@@ -23,7 +23,7 @@ get_header(); ?>
 
 						foreach ($jeux as $jeu){
 
-							echo "<li><a href=#".get_field("id", $jeu->ID)."><img src='".get_field("icone", $jeu->ID)."' /><p>".get_the_title($jeu->ID)."</p></a></li>";
+							echo "<li><a href=#".get_field("id", $jeu->ID)."><img src='".get_field("icone", $jeu->ID)."' alt='".get_field("id", $jeu->ID)."'><p>".get_the_title($jeu->ID)."</p></a></li>";
 
 							/*echo get_the_title($jeu->ID);
 
@@ -55,9 +55,9 @@ get_header(); ?>
 								echo "<div id='".get_field("id", $jeu->ID)."'>
 								<div class='wrapper'>";
 
-								echo "<ul class='images-jeux'><li><img src='".get_field("image", $jeu->ID)."' width='33%' /></li>
-								<li><img src='".get_field("image_2", $jeu->ID)."' width='33%' /></li>
-								<li><img src='".get_field("image_3", $jeu->ID)."' width='33%' /></li>";
+								echo "<ul class='images-jeux'><li><img src='".get_field("image", $jeu->ID)."'  alt=''></li>
+								<li><img src='".get_field("image_2", $jeu->ID)."'  alt=''></li>
+								<li><img src='".get_field("image_3", $jeu->ID)."'  alt=''></li></ul>";
 								
 								echo "<h2 id='materiel'>Matériel fourni</h2>";
 								
@@ -93,4 +93,4 @@ get_header(); ?>
 
 
 
-<!--<?php get_footer(); ?>-->
+<?php get_footer(); ?>

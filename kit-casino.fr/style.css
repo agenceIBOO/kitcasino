@@ -10,6 +10,18 @@
 	License: MIT
 	License URI: http://opensource.org/licenses/mit-license.php
 */
+.bgvid {
+	top: 0;
+	width: 100%;
+	height: auto;
+	z-index: 0;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+
 body {
 	background-color: #e6e6e6;
 	font-size: 1.125em;
@@ -77,6 +89,8 @@ h1, h2, h3 {
 	font-family: 'robotothin';
 	font-size: 2em;
 	margin-bottom:75px;
+	height: 360px;
+	overflow:hidden;
 }
 
 #video .wrapper {
@@ -216,6 +230,10 @@ h1, h2, h3 {
 .images-jeux li{
 	list-style: none;
 	display: inline;
+}
+
+.images-jeux img {
+	width: 33%;
 }
 
 

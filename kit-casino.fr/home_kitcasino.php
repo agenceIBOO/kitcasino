@@ -12,35 +12,39 @@ get_header(); ?>
 	<main role="main">
 	
 		<div id="video">
-			<img width="100%" height="215" src="<?php echo get_template_directory_uri(); ?>/img/video.jpg">
+			<video autoplay loop class="bgvid">
+				<source src="<?php echo get_template_directory_uri(); ?>/video/video_background.mp4" type="video/mp4" />
+				<source src="<?php echo get_template_directory_uri(); ?>/video/video_background.webm" type="video/webm" />
+				<source src="<?php echo get_template_directory_uri(); ?>/video/video_background.ogv" type="video/ogg" />
+			</video>
 			<p class="wrapper">Location de matériel de <span>Casino</span></p>
 		</div>
 		
 		<div class="wrapper">
 			<div>
-				<p>
+				
 					<?php
 					echo get_field("texte_avant");
 					?>
-				</p><br>
-				<p></p>
+				<br>
+				
 			</div>
 
 			<div id="avantages">
 				<h2><?php
 					echo get_field("titre_1");
 					?></h2>
-				<p><?php
+				<?php
 					echo get_field("texte_1");
-					?></p>
+					?>
 			</div>
 
 			<div id="partenaires">
 				<h2><?php
 					echo get_field("titre_2");
 					?></h2>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/partenaire_1.jpg">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/partenaire_1.jpg">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/partenaire_1.jpg" alt="partenaire1">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/partenaire_1.jpg" alt="partenaire2">
 			</div>
 
 
@@ -65,4 +69,4 @@ get_header(); ?>
 	</main>
 
 
-<!--<?php get_footer(); ?>-->
+<?php get_footer(); ?>

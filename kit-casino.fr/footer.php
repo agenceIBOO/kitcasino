@@ -16,7 +16,7 @@ get_header(); ?>
 								<td>1. Faites une demande de devis. Vivamus a luctus turpis. Proin vitae libero augue. Proin at purus eu metus elementum mattis et quis nisl. Mauris in orci id turpis volutpat placerat. Sed gravida maximus dictum.</td>
 								<td>2. Recevez une réponse dans les 72h. Proin at purus eu metus elementum mattis et quis nisl. Mauris in orci id turpis volutpat placerat. Sed gravida maximus dictum.</td>
 								<td>3. Passez une bonne soirée ! Vivamus a luctus turpis. Proin vitae libero augue. </td>
-							<tr>
+							</tr>
 						</table>
 
 						<p id="devis-bouton"><a href='#'> Devis en ligne</a></p>

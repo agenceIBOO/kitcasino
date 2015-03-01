@@ -556,9 +556,9 @@ h1, h2, h3 {
 										    line-height: 1em;
 										}
 										ol.progtrckr li.progtrckr-done:before {
-										    content: "\2713";
+										    content:url(img/pb_green.png);
 										    color: white;
-										    background-color: #27AE60;
+										    background-color: transparent;
 										    height: 1.2em;
 										    width: 1.2em;
 										    line-height: 1.2em;
@@ -566,17 +566,17 @@ h1, h2, h3 {
 										    border-radius: 1.2em;
 										}
 										ol.progtrckr li.progtrckr-todo:before {
-										    content: "\039F";
+										    content:url(img/pb_red.png);
 										    color: silver;
-										    background-color: #a72525;
+										    background-color: transparent;
 										    font-size: 1.5em;
 										    bottom: -1.6em;
 										}
 
 										ol.progtrckr li.progtrckr-active:before {
-											content: "\039F";
+										    content:url(img/pb_red.png);
 											color:#ffdc52;
-											background-color: #a72525;
+											background-color: transparent;
 											font-size: 1.5em;
 										    bottom: -1.6em;
 										}
@@ -691,6 +691,22 @@ h1, h2, h3 {
 										.ll-skin-melon td .ui-state-active,
 										.ll-skin-melon td .ui-state-hover {
 											background: #ffdc52;
+										}
+
+										@media screen and (max-width: 900px) {
+										    #xs-datepicker{
+										      display: block;
+										    }
+
+										    #date-picker-input-1{
+										      display: none;
+										    }
+										}
+
+										@media screen and (min-width: 900px) {
+										    #xs-datepicker{
+										      display: none;
+										    }
 										}
 
 

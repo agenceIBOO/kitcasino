@@ -7,11 +7,6 @@
 <link rel="stylesheet" href="datepicker.css">
 <link href="style.css" rel="stylesheet">
 <style>
-#progressbar li.active::before, #progressbar li.active::after{
-background: #27AE60 !important;
-color: white !important;
-}
-
 @media screen and (max-width: 900px) {
     #xs-datepicker{
       display: block;
@@ -106,7 +101,7 @@ function fillInAddress() {
 <body onload="initialize()">
 
 <ol class="progtrckr" data-progtrckr-steps="5">
-    <li class="progtrckr-todo">Vous</li><li class="progtrckr-todo">Votre soirée</li><li class="progtrckr-todo">Vos jeux</li><li class="progtrckr-todo">Récapitulatif</li><li class="progtrckr-todo">Confirmation</li>
+    <li class="progtrckr-done">Vous</li><li class="progtrckr-todo">Votre soirée</li><li class="progtrckr-todo">Vos jeux</li><li class="progtrckr-todo">Récapitulatif</li><li class="progtrckr-todo">Confirmation</li>
   </ol>
 
 <!-- Progress-bar pour les petits périphériques -->

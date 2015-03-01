@@ -46,10 +46,11 @@ get_header();
           <fieldset>
             <p class="fs-subtitle">Dites-nous en plus sur la soirée que vous voulez organiser</p>
             <span id="locationField">
-              <input id="autocomplete" name="adresse2" onFocus="geolocate()" type="text" size="50" placeholder="Adresse de l'évènement" placeholder="Adresse (ex: 22 rue de la Paix, Paris, France)" required></input>
+              <input id="autocomplete" name="adresse2" onFocus="geolocate()" type="text" size="50" placeholder="Adresse (ex: 22 rue de la Paix, Paris, France)" required pattern=".*France"></input>
             </span><br>
             <input type="text" name="date" placeholder="Date de la soirée" id="date-picker-input-1" required><br>
-            <input type="number" name="nb_invite" placeholder="Nombre d'invités" required><br>
+            <input type="date" name="date" placeholder="Date de la soirée" id="xs-datepicker" required>
+            <input type="number" name="nb_invite" placeholder="Nombre d'invités" required pattern="^[+]?\d+([.]\d+)?$"><br>
             <div class="txtleft">
               <select name="evenement" id="evenement" required>
                 <option value="" disabled selected>Type d'évènement :</option>

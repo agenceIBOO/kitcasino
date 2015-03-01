@@ -140,11 +140,12 @@ progress{display:inline-block;vertical-align:baseline}
 	display:none;
 }
 
+/*progressbar*/
 ol.progtrckr {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
-    width: 70vw;
     list-style-type: none;
+    text-align: center;
 }
 
 ol.progtrckr li {
@@ -156,12 +157,17 @@ ol.progtrckr li {
 ol.progtrckr[data-progtrckr-steps="5"] li { width: 19%; }
 
 ol.progtrckr li.progtrckr-done {
-    color: black;
+    color: #27AE60;
     border-bottom: 5px solid #27AE60;
 }
 ol.progtrckr li.progtrckr-todo {
     color: silver; 
     border-bottom: 5px solid silver;
+}
+
+ol.progtrckr li.progtrckr-active {
+    color: #ffdc52;
+    border-bottom: 5px solid #ffdc52;
 }
 
 /*Positionnement des icones*/
@@ -177,9 +183,9 @@ ol.progtrckr li:before {
     line-height: 1em;
 }
 ol.progtrckr li.progtrckr-done:before {
-    content: "\2713";
+    content:url(img/pb_green.png);
     color: white;
-    background-color: #27AE60;
+    background-color: transparent;
     height: 1.2em;
     width: 1.2em;
     line-height: 1.2em;
@@ -187,10 +193,18 @@ ol.progtrckr li.progtrckr-done:before {
     border-radius: 1.2em;
 }
 ol.progtrckr li.progtrckr-todo:before {
-    content: "\039F";
+    content:url(img/pb_red.png);
     color: silver;
-    background-color: white;
+    background-color: transparent;
     font-size: 1.5em;
+    bottom: -1.6em;
+}
+
+ol.progtrckr li.progtrckr-active:before {
+	content: "\039F";
+	color:#ffdc52;
+	background-color: transparent;
+	font-size: 1.5em;
     bottom: -1.6em;
 }
 

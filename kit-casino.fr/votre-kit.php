@@ -127,9 +127,9 @@ get_header();
                       ?>
                       <p id='recuptitre'>Comment souhaitez vous récupérer votre Kit ?</p><p>Vous pouvez opter pour la livraison ou un retrait en point de dépot.<br>Adresse du point de dépot : là bas, LOGNES, 77185.</p>
                       <label for='livraison'>Livraison</label>
-                      <input id='livraison' type='radio' value='livraison' name='recuperation'><br>
+                      <input id='livraison' type='radio' value='livraison' name='recuperation' required><br>
                       <label for='retrait'>Retrait</label>
-                      <input id='retrait' type='radio' value='retrait' name='recuperation'><br><br>
+                      <input id='retrait' type='radio' value='retrait' name='recuperation' required><br><br>
                   
 
 

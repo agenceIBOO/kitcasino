@@ -125,7 +125,13 @@ function fillInAddress() {
 <fieldset>
     <h2 class="fs-title">Votre soirée</h2>
     <h3 class="fs-subtitle">Dites-nous en plus sur la soirée que vous voulez organiser</h3>
-    <span id="locationField"><input id="autocomplete" name="adresse2" onFocus="geolocate()" type="text" size="50" placeholder="Adresse de l'évènement" autofocus></input></span><br>
+
+    <?php
+    $lieu = $_POST['lieuidentique'];
+
+    if(!empty($lieu)){ ?>
+     <span id="locationField"><input id="autocomplete" name="adresse2" onFocus="geolocate()" type="text" size="50" placeholder="Adresse de l'évènement" autofocus></input></span><br>
+<?php } ?>
     <input type="text" name="date" placeholder="Date de la soirée" id="date-picker-input-1">
     <input type="date" name="date" placeholder="Date de la soirée" id="xs-datepicker">
     <input type="number" name="nb_invite" placeholder="Nombre d'invités"><br>

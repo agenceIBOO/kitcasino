@@ -47,22 +47,24 @@ get_header(); ?>
 					?>
 				</h2>
 
-				<?php
-					$args = array(
-					'posts_per_page'   => -1,
-					'post_type'        => 'partenaire',
-					'post_status'      => 'publish'
-					);
+				<ul>
+					<?php
+						$args = array(
+						'posts_per_page'   => -1,
+						'post_type'        => 'partenaire',
+						'post_status'      => 'publish'
+						);
 
-					$partenaires = get_posts( $args );
+						$partenaires = get_posts( $args );
 
-					foreach ($partenaires as $partenaire){
+						foreach ($partenaires as $partenaire){
 
-						echo "<img src=".get_field("photo_du_partenaire", $partenaire->ID)." width='308' alt='".get_the_title($partenaire->ID)."' />";
-					
-					}
-				?>
-				
+							echo "<li><figure><img src=".get_field("photo_du_partenaire", $partenaire->ID)." width='308' height='161' alt='".get_the_title($partenaire->ID)."' />";
+							echo "<figcaption>".get_the_title($partenaire->ID)."<br>".get_field("courte_description_du_partenaire", $partenaire->ID)."</figcaption> </figure> </li>";
+						
+						}
+					?>
+				</ul>
 			</div>
 
 

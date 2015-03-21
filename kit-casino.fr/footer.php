@@ -1,10 +1,4 @@
-<?php 
 
-/**
-* Template Name: Footer
-*/
-
-get_header(); ?>
 
 			<!-- footer -->
 			<footer  class="footer" role="contentinfo">
@@ -13,13 +7,21 @@ get_header(); ?>
 						<h3>Comment ça marche ?</h3>
 						<table>
 							<tr>
-								<td>1. Faites une demande de devis. Vivamus a luctus turpis. Proin vitae libero augue. Proin at purus eu metus elementum mattis et quis nisl. Mauris in orci id turpis volutpat placerat. Sed gravida maximus dictum.</td>
-								<td>2. Recevez une réponse dans les 72h. Proin at purus eu metus elementum mattis et quis nisl. Mauris in orci id turpis volutpat placerat. Sed gravida maximus dictum.</td>
-								<td>3. Passez une bonne soirée ! Vivamus a luctus turpis. Proin vitae libero augue. </td>
+								<td>1. <?php 
+											echo get_field('etape_1', 71) ;
+										?>
+
+								</td>
+								<td>2. <?php 
+											echo get_field('etape_2', 71) ;
+										?></td>
+								<td>3. <?php 
+											echo get_field('etape_3', 71) ;
+										?> </td>
 							</tr>
 						</table>
 
-						<p id="devis-bouton"><a href='#'> Devis en ligne</a></p>
+						<p id="devis-bouton"><a href='http://www.kit-casino.fr/wordpress/tarifs-et-devis'> Devis en ligne</a></p>
 					</div>
 				</div>
 
